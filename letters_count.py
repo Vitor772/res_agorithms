@@ -1,10 +1,13 @@
-from collections import Counter
+string = "bacdfez"
+string_ordenada = ''.join(sorted(string.replace(" ", "")))
 
-string = "Domingo estamos de folga"
+grupos, grupo_atual = [], string_ordenada[0]
+for i in string_ordenada[1:]:
+    if len(grupo_atual) == 3 or ord(i) != ord(grupo_atual[-1]) + 1:
+        grupos.append(grupo_atual)
+        grupo_atual = i
+    else:
+        grupo_atual += i
+grupos.append(grupo_atual)
 
-string_sem_espaco = string.replace(" ", "")
-
-frequencia = Counter(string_sem_espaco)
-
-letras_ordenadas = sorted(frequencia.items(), key=lambda x: (-x[1], x[0]))
-
+print(grupos)

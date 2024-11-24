@@ -1,3 +1,4 @@
 frutas = ["Maçã", "Peira", "Banana", "uva"]
-
-print(len(frutas))
+query = 2
+resultado = frutas[query]
+print(resultado)

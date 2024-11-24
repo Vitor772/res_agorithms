@@ -1,5 +1,5 @@
 def is_valid(s):
-    bracket_map = {')': '(', '}': '{', ']': '['}
+    bracket_map = {']' : '[', '}' : '{', ')' : '('}
     stack = []
 
     for char in s:
